@@ -5,7 +5,7 @@ function constTest() {
 
     if(true) {
         //Same as let - Gets re-declared since scopes are different
-        const globalConst=30;
+        const globalConst=30; //shadowing - shadows outer globalConst
         console.log("Inside block : " + globalConst);
     }
     console.log("Inside function : " + globalConst);
