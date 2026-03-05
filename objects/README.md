@@ -33,3 +33,31 @@
 **Limitations**
 -> JSON.parse(JSON.stringify()) fails with functions, undefined, Symbol or circular references
 -> Use structuredClone() for deep copies (in modern browsers)
+
+**for...in loop**
+-> Iterates over all enumerable, non-symbol properties of an object, including inherited ones
+
+**Object.keys** and **Object.values**
+-> Returns an array of an object's own enumerable property names.
+-> Use for-each or for-of to iterate
+
+**Object.enties**
+-> Returns an array of key-value pairs
+-> Use destructuring with for-of or forEach
+
+**Destructuring**
+-> An ES6 feature that allows unpacking of values from arrays/properties from objects into distinct variables
+-> Makes code more concise and readable
+
+**Object destructuring**
+-> Extract properties from an object into variables
+-> Same can be re-assigned to different variable names using a colon
+
+**Nested destructuring**
+-> Extract deeply nested properties
+
+**Default values**
+-> Provide fallback values if a property or array element is missing
+
+**Object freezing**
+-> Prevents modification
