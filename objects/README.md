@@ -78,3 +78,19 @@ obj.__proto__ === Object.prototype -> it returns true
 -> Changin a prototype after object creation affects all instances
 **Note**
 -> Modern JS uses 'class' syntax as syntactic sugar over prototypes, but it works the same under the hood
+
+**object vs map**
+**Objects**
+-> Keys become strings
+-> For simple, plain Data structures
+-> Used for structured data
+-> Use when native JS support required
+-> When working with small, static data eith string keys
+**Map**
+-> Keys can be any type
+-> Preserves insertion order
+-> Better for dynamic key/value collections
+-> Use when performing frequent insertions/deletions
+-> When working with large datasets requiring high performance
+**Note**
+-> While both are valid, 'Map' is generally preferred for dynamic, complex key-value storage due to it's flexibility, safety and performance
