@@ -94,3 +94,10 @@ obj.__proto__ === Object.prototype -> it returns true
 -> When working with large datasets requiring high performance
 **Note**
 -> While both are valid, 'Map' is generally preferred for dynamic, complex key-value storage due to it's flexibility, safety and performance
+
+**this**
+-> Global scope : window
+-> Regular function : window/undefined
+-> Method call : object before dot
+-> Arrow function : Inherited from parent
+-> Constructor(new) : new object
