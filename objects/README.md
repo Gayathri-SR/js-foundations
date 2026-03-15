@@ -101,3 +101,15 @@ obj.__proto__ === Object.prototype -> it returns true
 -> Method call : object before dot
 -> Arrow function : Inherited from parent
 -> Constructor(new) : new object
+
+**call()**
+-> Invokes a function immediately and lets you set the value of 'this'
+-> Takes comma separated values as arguments
+
+**apply()**
+-> Almost same as call, but arguments are passed as an array
+
+**bind()**
+-> Does not call the function immediately
+-> Instead, returns a new function with 'this' permanently bound
+-> Once an object is bound using 'bind', 'this' cannot be changed
