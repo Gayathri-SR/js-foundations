@@ -63,21 +63,41 @@
 -> Prevents modification
 
 **Prototypes**
+-> Mechanism that lets objects inherit properties and methods from other objects
+-> Backbone of JS's object system
+-> 'class' is just syntactic sugar over prototypes
 -> Every object has an internal [[Prototype]]
 Eg : const obj= {};
 When we check
 obj.__proto__ === Object.prototype -> it returns true
 -> When we access obj.toString(), it comes from Object.prototype
 -> They enable inheritance and shared behavior among objects
+-> Provide memory optimization, help us understand how classes actually work, important for debugging and framework internals
 **Prototype chain**
 -> When accessing a property, JS checks the object first, then it's prototype, then the prototype's prototype, until it reaches Object.prototype
 (whose prototype is null)
 **Shared methods**
 -> Methods defined on prototype are shared across all instances, saving memory
 **Dynamic updates**
--> Changin a prototype after object creation affects all instances
+-> Changing a prototype after object creation affects all instances
 **Note**
 -> Modern JS uses 'class' syntax as syntactic sugar over prototypes, but it works the same under the hood
+
+**Difference between [[Prototype]],__proto__ and prototype**
+**[[Prototype]] (The Real Internal Link)**
+-> It's the actual internal property used by the JS engine
+-> Every object internall has [[Prototype]]. This is what forms the prototype chain
+-> Eg. lookup:
+    obj.property  -> obj.[[Prototype]] -> obj.[[Prototype]].[[Prototype]] -> null
+-> We cannot directly access [[Prototype]]. It is part of the JS specification
+**__proto__ (Accessor for [[Prototype]])**
+-> It is a getter/setter that exposes [[Prototype]]
+-> This is legacy and generally avoided
+-> Preferred modern methods:
+    Object.getPrototypeOf(obj)
+    Object.setPrototypeOf(obj,proto);
+**prototype (Property of Functions)**
+-> Exists only on prototype functions and classes
 
 **object vs map**
 **Objects**

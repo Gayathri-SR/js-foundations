@@ -29,3 +29,26 @@ dog.name="Rex";
 dog.eat();
 dog.sleep();
 //Here, dog inherits eat() and sleep() from animalPrototype
+
+//prototype with classes
+class Person {
+    constructor(name) {
+        this.name=name;
+    }
+
+    sayHi() {
+        console.log("Hi "+this.name);
+    }
+}
+//Behind the scene : Person.prototype.sayHi
+
+//checking prototypes
+Object.getPrototypeOf(dog);
+dog.__proto__;
+
+const animal={
+    eats:true
+};
+const dog1={};
+dog1.__proto__=animal;
+console.log(dog1.eats); //true
