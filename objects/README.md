@@ -73,15 +73,37 @@ obj.__proto__ === Object.prototype -> it returns true
 -> When we access obj.toString(), it comes from Object.prototype
 -> They enable inheritance and shared behavior among objects
 -> Provide memory optimization, help us understand how classes actually work, important for debugging and framework internals
-**Prototype chain**
--> When accessing a property, JS checks the object first, then it's prototype, then the prototype's prototype, until it reaches Object.prototype
-(whose prototype is null)
 **Shared methods**
 -> Methods defined on prototype are shared across all instances, saving memory
 **Dynamic updates**
 -> Changing a prototype after object creation affects all instances
 **Note**
 -> Modern JS uses 'class' syntax as syntactic sugar over prototypes, but it works the same under the hood
+
+**Prototype chain**
+-> It is the sequence of objects JS checks when we try to access a property
+-> When accessing a property, JS checks the object first, then it's prototype, then the prototype's prototype, until it reaches Object.prototype
+(whose prototype is null)
+-> The chain always ends at 'Object.prototype' as
+    Object.prototype.__proto__ === null
+-> This is one of the reasons deep inheritance can hurt performance (despite JS engines optimizing it)
+
+**How 'new' keyword builds prototype chain internally**
+const user=new Person("abc");
+**Step 1 : Create a new empty object**
+const obj={};
+**Step 2 : Link prototype**
+obj.[[Prototype]]=Person.prototype
+So now,
+    obj -> Person.prototype -> Object.prototype -> null
+This is how prototype chain is built automatically
+**Step 3 : Call constructor function**
+Person.call(obj,"abc");
+Now,
+    obj.name="abc"
+**Step 4 : Return the object**
+return obj;
+Unless the constructor explicitly returns something else
 
 **Difference between [[Prototype]],__proto__ and prototype**
 **[[Prototype]] (The Real Internal Link)**

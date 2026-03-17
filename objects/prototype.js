@@ -52,3 +52,16 @@ const animal={
 const dog1={};
 dog1.__proto__=animal;
 console.log(dog1.eats); //true
+
+//prototype chain
+const cat=Object.create(animal);
+cat.meow=function() {
+    console.log("Meow");
+};
+cat.meow(); //Meow
+cat.eats; //true
+//Prototype chain lookup
+//cat.eats -> check cat object (no eats) -> check cat.[[Prototype]] which is animal (found eats) -> return true
+cat.talks; //undefined
+//When prototype doesn't exist anymore
+//cat.talks -> cat.prototype -> animal.prototype -> Object.prototype -> null (result=undefined)
