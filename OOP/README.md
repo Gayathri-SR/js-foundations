@@ -11,3 +11,9 @@ b.prototype=a.prototype
     Methods    : Object.create(Parent.prototype) //Prototype chaining
 -> Methods are not copied. They are shared via prototype
 -> Lookup still uses prototype chain
+
+**Note**
+-> JS supports OOP, but it's prototype based rather than class-based. 
+-> ES6 classes are syntactic sugar over prototypes
+-> Java/C++ : Classes create objects
+   JS       : Objects inherit from objects (via prototype)
