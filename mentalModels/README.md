@@ -43,3 +43,10 @@ one();
     => Run all microtasks first
     => Run one macrotask
     => Repeat
+
+**Mental model two**
+-> JS = one worker
+-> Tasks waiting in queues
+-> Microtasks = VIP line
+-> Macrotasks = normal queue
+-> Event loop = security guard letting people in
