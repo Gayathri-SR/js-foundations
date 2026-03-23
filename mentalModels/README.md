@@ -31,7 +31,7 @@ one();
 -> Things like setTimeout, fetch, DOM events, SetInterval do not run in the JS engine. They run in the web/node APIs
 -> When finished, callback goes to the task queue
 3. Task/Macrotask queue
--> Callbacks from setTimeout, setInterval, DOM events go into the task queue
+-> Callbacks from setTimeout, setInterval,setImmediate, I/O operations and DOM events go into the task queue
 -> But these cannot run immediately. They wait until call stack is empty
 4. Microtask queue
 -> Microtasks include - Promise.then, Promise.catch, queueMicrotask, MutationObserver

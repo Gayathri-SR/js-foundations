@@ -38,3 +38,40 @@ Event loop -> the boss that moves things to stack
 -> Not understanding await=promise under the hood
 -> Writing blocks loops - freezes UI
 **Refer mental model**
+
+**Promises**
+-> Promise is an object that represents : "A value that will be available in the future"
+-> It has 3 states : 
+    => Pending
+    => Fulfilled(Resolved)
+    => Rejected
+**Why they exist**
+-> Before promises, JS used callbacks which led to callback hell in few scenarios
+-> Promises fix this by making async code chainable and readable
+**Promise methods**
+-> Promise.all() : Fails if any promise fails
+-> Promise.allSettled() : Never fails, gives all results
+-> Promise.race() : First one to finish wins
+-> Promise.any() : First success wins(ignores failures)
+**Note**
+-> Modern way of using promises : async/await (syntactic sugar)
+-> .then() runs in microtask queue
+-> Few methods on promises similar to .then() : .resolve(), .reject(), .finally()
+-> Use return() for calling functions inside promises
+**Promise chaining**
+-> Allows us to execute multiple asynchronous operations in sequence, where each operation starts only after the previous one completes successfully
+-> Each .then() returns a new Promise, enabling the chain to continue
+-> If a .then() handler returns a value, the next .then() receives that value
+-> If it returns a Promise, the chain waits for that Promise to settle before passing it's result to the next handler
+-> This pattern avoids callback hell and enables clean, readable, sequential asynchronous code
+**API handling** 
+-> It refers to making HTTP requests to a server to fetch or send data, commonly using the fetch() API, Axios, or other libraries
+**Fetch API**
+-> The modern, built-in fetch() method is promise-based and widely used for API calls
+-> It returns a Promise that resolves to a Response object
+**Axios**
+-> A popular, promise-based HTTP client for JS that simplifies making asynchronous HTTP requests from both the browser and Node.js environments
+**React Query/TanStack Query**
+-> For managing API state in React applications
+**Note**
+-> Use fetch() for most cases; consider Axios or libraries like React Query for complex apps
