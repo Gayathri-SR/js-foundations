@@ -75,3 +75,8 @@ Event loop -> the boss that moves things to stack
 -> For managing API state in React applications
 **Note**
 -> Use fetch() for most cases; consider Axios or libraries like React Query for complex apps
+
+**async/await**
+-> Even though JS is single-threaded, instead of blocking execution, JS uses Promises for certain tasks
+-> But promises can get messy with .then() chains
+-> That's where async/await comes in - it makes async code look synchronous
