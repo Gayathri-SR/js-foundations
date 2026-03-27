@@ -80,3 +80,13 @@ Event loop -> the boss that moves things to stack
 -> Even though JS is single-threaded, instead of blocking execution, JS uses Promises for certain tasks
 -> But promises can get messy with .then() chains
 -> That's where async/await comes in - it makes async code look synchronous
+**Top level await**
+-> Works only with
+    => ES modules (type="module")
+    => modern environments
+**Common interview traps**
+-> await works only inside async
+-> async doesn't make code synchronous
+-> forgetting try/catch
+-> using forEach with await
+-> unnecessary awaits(performance hit)
