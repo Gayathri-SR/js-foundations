@@ -37,3 +37,11 @@
 -> Why not just debounce everything?
     -> Debounce misses intermediate states
     -> Throttle captures ongoing behavior
+
+**Polyfills**
+-> Code that adds modern functionality to older browsers that doesn't support it (like a fallback implementation)
+**Need**
+-> JS keeps evolving (ES6, ES7 etc,.) but:
+    => Older browsers (or environments) don't support new features
+    => You still want your app to work everywhere
+-> So you "fill in the gaps" - poly+fill=polyfill
