@@ -8,3 +8,8 @@ if(!Array.prototype.includes) {
 }
 //Now even old browsers can use :
 console.log([1,2,3].includes(2)); //true
+
+//basic working
+if(!featureExists) {
+    //define polyfill
+}

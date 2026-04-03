@@ -45,3 +45,26 @@
     => Older browsers (or environments) don't support new features
     => You still want your app to work everywhere
 -> So you "fill in the gaps" - poly+fill=polyfill
+**Real-life example**
+-> Older browsers didn't support 'Promise'
+-> So libraries like core-js, es6-promise provide polyfills so this works everywhere:
+    new Promise((resolve,reject) => {
+        resolve("Done);
+    });
+**Working**
+-> Check if feature exists
+-> If not, define it manually
+
+**Polyfill vs Transpiler**
+-> Polyfill - adds missing functionality at runtime
+-> Transpiler - Converts modern JS to older JS (like Babel)
+**Eg**
+-> ?. (Optional chaining) - handled by Babel
+-> Promise - needs polyfill
+**When to use**
+-> Supporting older browsers (like IE/old Android WebView)
+-> Working on production apps with wide audience
+(Usually not written manually anymore)
+-> Tools like Babel + core-js handle it automatically
+**think of polyfills like**
+-> Installing missing apps on an old phone so it can run modern features
