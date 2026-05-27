@@ -68,3 +68,9 @@
 -> Tools like Babel + core-js handle it automatically
 **think of polyfills like**
 -> Installing missing apps on an old phone so it can run modern features
+
+**Fetch API**
+-> A modern, promise-based JS interface for making HTTP requests to fetch resources, instead of XMLHttpRequest
+-> It is built into modern browsers
+-> Allows developers to perform network requests using standard methods like GET, POST, PUT and DELETE without needing external libraries
+-> Always succeeds and never returns an error (status code for success and failure)
